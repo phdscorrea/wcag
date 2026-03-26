@@ -1,465 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Meta tags essenciais -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia de Boas Práticas em Design Instrucional Acessível na EaD com foco em inclusão e qualidade no ensino a distância.">
+    <meta name="author" content="Dissertação de Mestrado - UFAM">
+    
+    <!-- Título e ícone -->
     <title>Guia de Boas Práticas em Design Instrucional Acessível na EaD</title>
     <link rel="icon" type="image/png" href="https://i.imgur.com/BrVP0xP.png">
-    <style>
-        /* Reset e configurações básicas */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            font-size: 16px;
-        }
-
-        /* Cabeçalho */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Container principal */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navegação */
-        nav {
-            background-color: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            transition: transform 0.3s ease;
-        }
-
-        nav.hidden {
-            transform: translateY(-100%);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #667eea;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #667eea;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        nav a:hover, nav a:focus {
-            background-color: #667eea;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Seções principais */
-        main {
-            padding: 3rem 0;
-        }
-
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        h2 {
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            color: #764ba2;
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem 0;
-        }
-
-        /* Imagens responsivas */
-        .image-container {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container img:hover {
-            transform: scale(1.05);
-        }
-
-        .image-caption {
-            font-style: italic;
-            color: #666;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        /* Tabelas */
-        .table-container {
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        /* Cards interativos */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-left: 4px solid #667eea;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            border-left-color: #764ba2;
-        }
-
-        .card h4 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Botões interativos */
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            margin: 0.5rem;
-        }
-
-        .btn:hover, .btn:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Listas estilizadas */
-        .styled-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .styled-list li {
-            padding: 0.75rem 0;
-            border-left: 3px solid #667eea;
-            padding-left: 1rem;
-            margin: 0.5rem 0;
-            background: #f8f9fa;
-            border-radius: 0 8px 8px 0;
-            transition: all 0.3s ease;
-        }
-
-        .styled-list li:hover {
-            background: #e9ecef;
-            border-left-color: #764ba2;
-        }
-
-        /* Seção de destaque */
-        .highlight-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .highlight-section h2 {
-            color: white;
-            border-bottom: 3px solid white;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-                padding: 0 1rem;
-            }
-
-            header p {
-                font-size: 1rem;
-                padding: 0 1rem;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-
-            .nav-toggle {
-                display: block;
-            }
-
-            nav ul {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                gap: 0;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-            nav ul.show {
-                max-height: 400px;
-            }
-
-            nav li {
-                border-bottom: 1px solid #f0f0f0;
-            }
-
-            nav li:last-child {
-                border-bottom: none;
-            }
-
-            nav a {
-                display: block;
-                padding: 1rem;
-                border-radius: 0;
-                text-align: center;
-            }
-
-            section {
-                padding: 1.5rem;
-                margin: 1rem 0;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            h3 {
-                font-size: 1.3rem;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .card {
-                padding: 1.5rem;
-            }
-
-            .table-container {
-                font-size: 0.9rem;
-            }
-
-            th, td {
-                padding: 0.75rem 0.5rem;
-            }
-
-            .highlight-section {
-                padding: 2rem 1.5rem;
-            }
-
-            .image-container img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            header p {
-                font-size: 0.9rem;
-            }
-
-            section {
-                padding: 1rem;
-            }
-
-            .card {
-                padding: 1rem;
-            }
-
-            .highlight-section {
-                padding: 1.5rem 1rem;
-            }
-
-            th, td {
-                padding: 0.5rem 0.25rem;
-                font-size: 0.8rem;
-            }
-
-            .btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Acessibilidade */
-        :focus {
-            outline: 3px solid #667eea;
-            outline-offset: 2px;
-        }
-
-        /* Animações suaves */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Tooltip */
-        .tooltip {
-            position: relative;
-            cursor: help;
-            border-bottom: 1px dotted #667eea;
-        }
-
-        .tooltip:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 4px;
-            white-space: nowrap;
-            z-index: 1000;
-            font-size: 0.8rem;
-        }
-    </style>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- ================================================================
+         CABEÇALHO
+         ================================================================ -->
     <header>
         <div class="container">
             <h1>Guia de Boas Práticas em Design Instrucional Acessível na EaD</h1>
-            <p>Promovendo inclusão e qualidade no ensino a distância</p>
         </div>
     </header>
 
+    <!-- ================================================================
+         NAVEGAÇÃO
+         ================================================================ -->
     <nav>
         <div class="nav-container">
             <button class="nav-toggle" aria-label="Abrir menu de navegação">
@@ -477,11 +44,50 @@
         </div>
     </nav>
 
+    <!-- ================================================================
+         MENU LATERAL ESQUERDO (SIDEBAR)
+         ================================================================ -->
+    <aside id="sidebar-nav" class="sidebar-nav" aria-label="Menu de navegação lateral" role="navigation">
+        <div class="sidebar-header">
+            <h3>Seções</h3>
+            <button class="sidebar-toggle" id="sidebar-toggle-btn" aria-label="Recolher menu lateral" data-tooltip="Recolher (◄)">◄</button>
+            <button class="sidebar-close" aria-label="Fechar menu lateral">✕</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#design-visual">Design Visual</a></li>
+            <li><a href="#conteudo-textual">Conteúdo Textual</a></li>
+            <li><a href="#multimidia">Multimídia</a></li>
+            <li><a href="#interacao">Interação</a></li>
+            <li><a href="#atividades">Atividades</a></li>
+            <li><a href="#ferramentas">Ferramentas</a></li>
+        </ul>
+    </aside>
+
+    <!-- ================================================================
+         BARRA DE ACESSIBILIDADE
+         ================================================================ -->
+    <div id="a11y-bar" class="a11y-bar hidden" role="region" aria-label="Controles de acessibilidade">
+        <button type="button" data-action="increase-font" data-tooltip="Aumentar fonte (Ctrl+Shift+I)" aria-label="Aumentar fonte">A+</button>
+        <button type="button" data-action="decrease-font" data-tooltip="Diminuir fonte (Ctrl+Shift+D)" aria-label="Diminuir fonte">A-</button>
+        <button type="button" data-action="toggle-contrast" data-tooltip="Alternar alto contraste (Ctrl+Shift+C)" aria-label="Alternar alto contraste">Contraste</button>
+        <button type="button" data-action="toggle-spacing" data-tooltip="Alternar espaçamento extra" aria-label="Alternar espaçamento extra">Espaçamento</button>
+        <button type="button" data-action="toggle-reduced-motion" data-tooltip="Alternar movimento reduzido" aria-label="Alternar movimento reduzido">Sem animação</button>
+        <button type="button" data-action="toggle-a11y-bar" data-tooltip="Ocultar/mostrar barra de acessibilidade" aria-label="Ocultar barra de acessibilidade">Ocultar barra</button>
+        <button type="button" data-action="reset" data-tooltip="Resetar configurações" aria-label="Redefinir opções de acessibilidade">Reset</button>
+        <div id="a11y-announce" aria-live="polite" aria-atomic="true" class="sr-only" style="margin-left:1rem;"></div>
+    </div>
+
+    <button id="a11y-show-button" class="a11y-show-button" aria-label="Mostrar barra de acessibilidade" hidden>Opções de Acessibilidade</button>
+
+    <!-- ================================================================
+         CONTEÚDO PRINCIPAL
+         ================================================================ -->
     <main class="container">
+        <!-- SEÇÃO: INTRODUÇÃO -->
         <section id="introducao" class="fade-in">
             <h2>Introdução ao Guia</h2>
-            <p>Este guia apresenta uma proposta estruturada de boas práticas em Design Instrucional Acessível na EaD, desenvolvido como produto central de uma dissertação acadêmica. O objetivo é fornecer um recurso prático e modular para profissionais da área, garantindo que a acessibilidade seja integrada em cada etapa do processo de desenvolvimento de cursos online.</p>
-            
+            <p>Este guia apresenta uma proposta estruturada de boas práticas em Design Instrucional Acessível na EaD, desenvolvido como Produto Final da Dissertação de Mestrado Profissional em Design de Paulo Henrique de Souza Correa, pelo Programa de Pós-Graduação em Design da Universidade do Federal do Amazonas - UFAM. Tem o objetivo de fornecer um recurso prático e modular para profissionais da área, garantindo que a acessibilidade seja integrada em cada etapa do processo de desenvolvimento de cursos online.</p>
             <div class="highlight-section">
                 <h3>Objetivo Principal</h3>
                 <p>Integrar a acessibilidade em todas as fases do desenvolvimento de cursos online, não como um complemento tardio, mas como elemento fundamental do design instrucional.</p>
@@ -494,7 +100,7 @@
                 </div>
                 <div class="card">
                     <h4>📚 Abordagem Modular</h4>
-                    <p>Estrutura didática e de fácil consulta, organizada em temas abrangentes que cobrem as principais fases do desenvolvimento.</p>
+                    <p>Estrutura didática e de fácil consulta, organizada em temas abrangentes que cubram as principais fases do desenvolvimento.</p>
                 </div>
                 <div class="card">
                     <h4>⚡ Aplicação Prática</h4>
@@ -503,6 +109,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: DESIGN VISUAL -->
         <section id="design-visual" class="fade-in">
             <h2>Design Visual e Layout</h2>
             
@@ -534,20 +141,20 @@
                         <tr>
                             <td>Texto Normal</td>
                             <td>4.5:1</td>
-                            <td>Texto preto sobre fundo branco</td>
-                            <td>Texto cinza claro sobre branco</td>
+                            <td><span style="color:#000; background:#fff;">Texto preto sobre fundo branco</span></td>
+                            <td><span style="color:#bbb; background:#fff;">Texto cinza claro sobre branco</span></td>
                         </tr>
                         <tr>
-                            <td>Texto Grande (18pt+)</td>
+                            <td><span style="font-size: 18px;">Texto Grande (18pt+)</span></td>
                             <td>3:1</td>
-                            <td>Texto azul escuro sobre branco</td>
-                            <td>Texto amarelo claro sobre branco</td>
+                            <td><span style="color:#003366; background:#fff;">Texto azul escuro sobre branco</span></td>
+                            <td><span style="color:#fde78e; background:#fff;">Texto amarelo claro sobre branco</span></td>
                         </tr>
                         <tr>
                             <td>Elementos Gráficos</td>
                             <td>3:1</td>
-                            <td>Ícones com bordas definidas</td>
-                            <td>Ícones em tons pastéis</td>
+                            <td><span style="display:inline-flex; align-items:center; color:#000; background:#fff; border:2px solid #000; padding:0.2rem;">🔷 Ícones com bordas definidas</span></td>
+                            <td><span style="display:inline-flex; align-items:center; color:#999; background:#fff; border:2px solid #ddd; padding:0.2rem;">🔷 Ícones em tons pastéis</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -555,8 +162,7 @@
 
             <div class="card">
                 <h4>🔧 Ferramenta Recomendada</h4>
-                <p>Utilize o <span class="tooltip" data-tooltip="Ferramenta online gratuita para verificar contraste">WebAIM Contrast Checker</span> para testar as combinações de cores e garantir conformidade com as diretrizes WCAG.</p>
-                <button class="btn" onclick="window.open('https://webaim.org/resources/contrastchecker/', '_blank')">Acessar Ferramenta</button>
+                <p>Utilize o <a href="https://webaim.org/resources/contrastchecker/" target="_blank" class="tool-link">WebAIM Contrast Checker</a> para testar as combinações de cores e garantir conformidade com as diretrizes WCAG.</p>
             </div>
 
             <h3>Fontes e Tamanho do Texto</h3>
@@ -573,6 +179,29 @@
                 <li><strong>Alinhamento:</strong> Evitar texto justificado que cria espaços irregulares</li>
                 <li><strong>Entrelinha:</strong> Usar espaçamento de 1.5 ou 2.0 para facilitar a leitura</li>
             </ul>
+
+            <div class="font-demo-grid">
+                <div class="font-demo-card" style="font-family: Arial, sans-serif;">
+                    <h4>Arial</h4>
+                    <p>AaBbCc 1234</p>
+                    <p>Este texto demonstra Arial em uso.</p>
+                </div>
+                <div class="font-demo-card" style="font-family: Verdana, sans-serif;">
+                    <h4>Verdana</h4>
+                    <p>AaBbCc 1234</p>
+                    <p>Este texto demonstra Verdana em uso.</p>
+                </div>
+                <div class="font-demo-card" style="font-family: 'Open Sans', sans-serif;">
+                    <h4>Open Sans</h4>
+                    <p>AaBbCc 1234</p>
+                    <p>Este texto demonstra Open Sans em uso.</p>
+                </div>
+                <div class="font-demo-card" style="font-family: Lato, sans-serif;">
+                    <h4>Lato</h4>
+                    <p>AaBbCc 1234</p>
+                    <p>Este texto demonstra Lato em uso.</p>
+                </div>
+            </div>
 
             <h3>Organização Visual e Espaçamento</h3>
             
@@ -597,6 +226,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: CONTEÚDO TEXTUAL -->
         <section id="conteudo-textual" class="fade-in">
             <h2>Conteúdo Textual e Linguagem</h2>
             
@@ -660,6 +290,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: MULTIMÍDIA -->
         <section id="multimidia" class="fade-in">
             <h2>Multimídia (Vídeos, Áudios e Animações)</h2>
             
@@ -717,9 +348,10 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: INTERAÇÃO -->
         <section id="interacao" class="fade-in">
             <h2>Interação, Navegação e Usabilidade</h2>
-            
+
             <p>A forma como o aluno interage com o ambiente virtual deve ser intuitiva, flexível e consistente, promovendo autonomia e facilitando o acesso à informação.</p>
 
             <h3>Princípios de Navegação Acessível</h3>
@@ -775,6 +407,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: ATIVIDADES -->
         <section id="atividades" class="fade-in">
             <h2>Atividades e Avaliações Inclusivas</h2>
             
@@ -846,6 +479,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: FERRAMENTAS -->
         <section id="ferramentas" class="fade-in">
             <h2>Ferramentas e Plataformas (LMS)</h2>
             
@@ -899,6 +533,7 @@
             </div>
         </section>
 
+        <!-- SEÇÃO: CONCLUSÃO -->
         <section class="fade-in">
             <h2>Conclusão</h2>
             <p>A implementação dessas boas práticas em Design Instrucional Acessível na EaD representa um compromisso com a educação inclusiva e de qualidade. Cada elemento abordado neste guia contribui para criar ambientes de aprendizagem que atendem à diversidade de necessidades dos estudantes.</p>
@@ -911,162 +546,27 @@
         </section>
     </main>
 
-    <footer style="background: #333; color: white; text-align: center; padding: 2rem; margin-top: 3rem;">
+    <!-- ================================================================
+         RODAPÉ
+         ================================================================ -->
+    <footer>
         <div class="container">
             <p>&copy; 2024 Guia de Boas Práticas em Design Instrucional Acessível na EaD</p>
-            <p>Desenvolvido com foco na inclusão e acessibilidade digital</p>
+            <p>Versão 2026.1.0.001</p>
+            <div aria-label="Modo daltônico extra" role="group">
+                <img id="easteregg-trigger" src="images/easteregg.png" style="width:48px; height:48px; cursor:pointer; opacity:0.9;" alt="Easter Egg - Modos de Daltonismo">
+                <div class="easteregg-buttons">
+                    <button id="daltonism-protanopia" class="easteregg-btn" data-tooltip="Simulação de daltonismo protanopia (dificuldade com vermelho)" aria-label="Modo Protanopia">Protanopia</button>
+                    <button id="daltonism-deuteranopia" class="easteregg-btn" data-tooltip="Simulação de daltonismo deuteranopia (dificuldade com verde)" aria-label="Modo Deuteranopia">Deuteranopia</button>
+                    <button id="daltonism-tritanopia" class="easteregg-btn" data-tooltip="Simulação de daltonismo tritanopia (dificuldade com azul)" aria-label="Modo Tritanopia">Tritanopia</button>
+                    <button id="daltonism-achromatopsia" class="easteregg-btn" data-tooltip="Simulação de acromatopsia (visão em tons de cinza)" aria-label="Modo Acromatopsia">Acromatopsia</button>
+                    <button id="daltonism-reset" class="easteregg-btn" data-tooltip="Desativar modo daltônico experimental" aria-label="Limpar modo daltônico">Desativar</button>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Variáveis para controle da navegação
-        let lastScrollTop = 0;
-        const nav = document.querySelector('nav');
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('nav ul');
-
-        // Função para scroll suave
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Controle da navegação retrátil
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (currentScroll > lastScrollTop && currentScroll > 100) {
-                // Scrolling down - hide nav
-                nav.classList.add('hidden');
-            } else {
-                // Scrolling up - show nav
-                nav.classList.remove('hidden');
-            }
-            
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-
-            // Destacar link ativo na navegação
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('nav a[href^="#"]');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                if (window.pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.style.backgroundColor = '';
-                link.style.color = '#667eea';
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.style.backgroundColor = '#667eea';
-                    link.style.color = 'white';
-                }
-            });
-        });
-
-        // Toggle do menu mobile
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            const isOpen = navMenu.classList.contains('show');
-            navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
-            navToggle.textContent = isOpen ? '✕' : '☰';
-        });
-
-        // Fechar menu ao clicar em um link (mobile)
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                // Fechar menu mobile se estiver aberto
-                navMenu.classList.remove('show');
-                navToggle.textContent = '☰';
-                navToggle.setAttribute('aria-label', 'Abrir menu de navegação');
-                
-                // Scroll suave para a seção
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fechar menu mobile ao clicar fora dele
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && navMenu.classList.contains('show')) {
-                navMenu.classList.remove('show');
-                navToggle.textContent = '☰';
-                navToggle.setAttribute('aria-label', 'Abrir menu de navegação');
-            }
-        });
-
-        // Animação de entrada para seções
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Melhorar acessibilidade do teclado
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
-            }
-            
-            // Fechar menu mobile com Escape
-            if (e.key === 'Escape' && navMenu.classList.contains('show')) {
-                navMenu.classList.remove('show');
-                navToggle.textContent = '☰';
-                navToggle.setAttribute('aria-label', 'Abrir menu de navegação');
-                navToggle.focus();
-            }
-        });
-
-        document.addEventListener('mousedown', () => {
-            document.body.classList.remove('keyboard-navigation');
-        });
-
-        // Adicionar estilos para navegação por teclado
-        const style = document.createElement('style');
-        style.textContent = `
-            .keyboard-navigation *:focus {
-                outline: 3px solid #667eea !important;
-                outline-offset: 2px !important;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Ajustar altura do menu mobile baseado no conteúdo
-        function adjustMobileMenuHeight() {
-            if (window.innerWidth <= 768) {
-                const menuItems = navMenu.querySelectorAll('li').length;
-                const itemHeight = 60; // altura aproximada de cada item
-                navMenu.style.setProperty('--menu-height', `${menuItems * itemHeight}px`);
-            }
-        }
-
-        // Executar no carregamento e redimensionamento
-        window.addEventListener('load', adjustMobileMenuHeight);
-        window.addEventListener('resize', adjustMobileMenuHeight);
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
-
