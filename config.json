@@ -1,0 +1,87 @@
+{
+  "site": {
+    "title": "Guia de Boas Práticas em Design Instrucional Acessível na EaD",
+    "author": "Correa, P. H. S. (2026)",
+    "year": 2024,
+    "favicon": "https://i.imgur.com/BrVP0xP.png",
+    "language": "pt-BR"
+  },
+  "navigation": {
+    "sections": [
+      {
+        "id": "introducao",
+        "label": "Introdução",
+        "href": "#introducao"
+      },
+      {
+        "id": "design-visual",
+        "label": "Design Visual",
+        "href": "#design-visual"
+      },
+      {
+        "id": "conteudo-textual",
+        "label": "Conteúdo Textual",
+        "href": "#conteudo-textual"
+      },
+      {
+        "id": "multimidia",
+        "label": "Multimídia",
+        "href": "#multimidia"
+      },
+      {
+        "id": "interacao",
+        "label": "Interação",
+        "href": "#interacao"
+      },
+      {
+        "id": "atividades",
+        "label": "Atividades",
+        "href": "#atividades"
+      },
+      {
+        "id": "ferramentas",
+        "label": "Ferramentas",
+        "href": "#ferramentas"
+      }
+    ]
+  },
+  "colors": {
+    "primary": "#667eea",
+    "secondary": "#667eea",
+    "text": "#333",
+    "text_light": "#666",
+    "background": "#f8f9fa",
+    "white": "#fff",
+    "border": "#e9ecef",
+    "dark": "#333"
+  },
+  "typography": {
+    "font_primary": "Arial",
+    "font_fallback": "sans-serif",
+    "size_base": "16px",
+    "line_height": 1.6
+  },
+  "spacing": {
+    "section_margin": "2rem",
+    "section_padding": "2.5rem",
+    "card_padding": "2rem",
+    "container_max_width": "1200px",
+    "container_padding": "20px"
+  },
+  "responsive": {
+    "tablet_breakpoint": "768px",
+    "mobile_breakpoint": "480px"
+  },
+  "features": {
+    "smooth_scroll": true,
+    "sticky_navigation": true,
+    "mobile_menu": true,
+    "active_link_highlight": true,
+    "fade_in_animation": true
+  },
+  "footer": {
+    "copyright_year": 2024,
+    "copyright_text": "Guia de Boas Práticas em Design Instrucional Acessível na EaD",
+    "description": "Desenvolvido com foco na inclusão e acessibilidade digital"
+  }
+}

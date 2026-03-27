@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia de Boas Práticas em Design Instrucional Acessível na EaD com foco em inclusão e qualidade no ensino a distância.">
+    <meta name="author" content="Dissertação de Mestrado - UFAM">
+    
+    <!-- Título e ícone -->
+    <title>Guia de Boas Práticas em Design Instrucional Acessível na EaD</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/BrVP0xP.png">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ================================================================
+         CABEÇALHO
+         ================================================================ -->
+    <header>
+        <div class="container">
+            <h1>Guia de Boas Práticas em Design Instrucional Acessível na EaD</h1>
+        </div>
+    </header>
+
+    <!-- ================================================================
+         NAVEGAÇÃO
+         ================================================================ -->
+    <nav>
+        <div class="nav-container">
+            <button class="nav-toggle" aria-label="Abrir menu de navegação">
+                ☰
+            </button>
+            <ul>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#design-visual">Design Visual</a></li>
+                <li><a href="#conteudo-textual">Conteúdo Textual</a></li>
+                <li><a href="#multimidia">Multimídia</a></li>
+                <li><a href="#interacao">Interação</a></li>
+                <li><a href="#atividades">Atividades</a></li>
+                <li><a href="#ferramentas">Ferramentas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================================================================
+         BARRA DE ACESSIBILIDADE
+         ================================================================ -->
+    <div id="a11y-bar" class="a11y-bar hidden" role="region" aria-label="Controles de acessibilidade">
+        <button type="button" data-action="increase-font" data-tooltip="Aumentar fonte (Ctrl+Shift+I)" aria-label="Aumentar fonte">A+</button>
+        <button type="button" data-action="decrease-font" data-tooltip="Diminuir fonte (Ctrl+Shift+D)" aria-label="Diminuir fonte">A-</button>
+        <button type="button" data-action="toggle-contrast" data-tooltip="Alternar alto contraste (Ctrl+Shift+C)" aria-label="Alternar alto contraste">Contraste</button>
+        <button type="button" data-action="toggle-spacing" data-tooltip="Alternar espaçamento extra" aria-label="Alternar espaçamento extra">Espaçamento</button>
+        <button type="button" data-action="toggle-reduced-motion" data-tooltip="Alternar movimento reduzido" aria-label="Alternar movimento reduzido">Sem animação</button>
+        <button type="button" data-action="toggle-a11y-bar" data-tooltip="Ocultar/mostrar barra de acessibilidade" aria-label="Ocultar barra de acessibilidade">Ocultar barra</button>
+        <button type="button" data-action="reset" data-tooltip="Resetar configurações" aria-label="Redefinir opções de acessibilidade">Reset</button>
+        <div id="a11y-announce" aria-live="polite" aria-atomic="true" class="sr-only" style="margin-left:1rem;"></div>
+    </div>
+
+    <button id="a11y-show-button" class="a11y-show-button" aria-label="Mostrar barra de acessibilidade" hidden>Opções de Acessibilidade</button>
+
+    <!-- ================================================================
+         CONTEÚDO PRINCIPAL
+         ================================================================ -->
+    <main class="container">
+        <!-- SEÇÃO: INTRODUÇÃO -->
+        <section id="introducao" class="fade-in">
+            <h2>Introdução ao Guia</h2>
+            <p>Este guia apresenta uma proposta estruturada de boas práticas em Design Instrucional Acessível na EaD, desenvolvido como Produto Final da Dissertação de Mestrado Profissional em Design de Paulo Henrique de Souza Correa, pelo Programa de Pós-Graduação em Design da Universidade do Federal do Amazonas - UFAM. Tem o objetivo de fornecer um recurso prático e modular para profissionais da área, garantindo que a acessibilidade seja integrada em cada etapa do processo de desenvolvimento de cursos online.</p>
+            <div class="highlight-section">
+                <h3>Objetivo Principal</h3>
+                <p><span style="font-size: 18px;">Integrar a acessibilidade em todas as fases do desenvolvimento de cursos online, não como um complemento tardio, mas como elemento fundamental do design instrucional.</span></p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🎯 Foco na Inclusão</h4>
+                    <p>Garantir que todos os alunos, independentemente de suas necessidades específicas, tenham acesso pleno ao conteúdo educacional.</p>
+                </div>
+                <div class="card">
+                    <h4>📚 Abordagem Modular</h4>
+                    <p>Estrutura didática e de fácil consulta, organizada em temas abrangentes que cubram as principais fases do desenvolvimento.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Aplicação Prática</h4>
+                    <p>Recomendações detalhadas com exemplos concretos para implementação imediata em projetos educacionais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: DESIGN VISUAL -->
+        <section id="design-visual" class="fade-in">
+            <h2>Design Visual e Layout</h2>
+            <p>A forma como o curso se apresenta visualmente impacta diretamente a acessibilidade e a usabilidade para todos os alunos. Um design visual bem pensado não apenas melhora a estética, mas também a funcionalidade para usuários com diversas necessidades.</p>
+
+            <h3>Contraste de Cores</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Texto</th>
+                            <th>Contraste Mínimo (WCAG 2.1 AA)</th>
+                            <th>Exemplo Adequado</th>
+                            <th>Exemplo Inadequado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Texto Normal</td>
+                            <td>4.5:1</td>
+                            <td><span style="color:#000; background:#fff;">Texto preto sobre fundo branco</span></td>
+                            <td><span style="color:#bbb; background:#fff;">Texto cinza claro sobre branco</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18px;">Texto Grande (18pt+)</span></td>
+                            <td>3:1</td>
+                            <td><span style="color:#003366; background:#fff;">Texto azul escuro sobre branco</span></td>
+                            <td><span style="color:#fde78e; background:#fff;">Texto amarelo claro sobre branco</span></td>
+                        </tr>
+                        <tr>
+                            <td>Elementos Gráficos</td>
+                            <td>3:1</td>
+                            <td><span style="display:inline-flex; align-items:center; color:#000; background:#fff; border:2px solid #000; padding:0.2rem;">🔷 Ícones com bordas definidas</span></td>
+                            <td><span style="display:inline-flex; align-items:center; color:#999; background:#fff; border:2px solid #ddd; padding:0.2rem;">🔷 Ícones em tons pastéis</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h4>🔧 Ferramenta Recomendada</h4>
+                <p>Utilize o <a href="https://webaim.org/resources/contrastchecker/" target="_blank" class="tool-link">WebAIM Contrast Checker</a> para testar as combinações de cores e garantir conformidade com as diretrizes WCAG.</p>
+            </div>
+
+            <h3><span style="font-size: 21px;">Fontes e Tamanho do Texto</span></h3>
+            <ul class="styled-list">
+                <li><strong><span style="font-size: 18px;">Tamanho Mínimo:</strong> 16px para o corpo do texto</span></li>
+                <li><strong><span style="font-size: 18px;">Zoom:</strong> Suporte a zoom de até 200% sem perda de funcionalidade</span></li>
+                <li><strong><span style="font-size: 18px;">Fontes Recomendadas:</strong> Sans-serif como Arial, Verdana, Open Sans, Lato</span></li>
+                <div class="font-demo-grid">
+                    <div class="font-demo-card" style="font-family: Arial, sans-serif;">
+                        <h4>Arial</h4>
+                        <p>AaBbCc 1234</p>
+                        <p>Este texto demonstra Arial em uso.</p>
+                    </div>
+                    <div class="font-demo-card" style="font-family: Verdana, sans-serif;">
+                        <h4>Verdana</h4>
+                        <p>AaBbCc 1234</p>
+                        <p>Este texto demonstra Verdana em uso.</p>
+                    </div>
+                    <div class="font-demo-card" style="font-family: 'Open Sans', sans-serif;">
+                        <h4>Open Sans</h4>
+                        <p>AaBbCc 1234</p>
+                        <p>Este texto demonstra Open Sans em uso.</p>
+                    </div>
+                    <div class="font-demo-card" style="font-family: Lato, sans-serif;">
+                        <h4>Lato</h4>
+                        <p>AaBbCc 1234</p>
+                        <p>Este texto demonstra Lato em uso.</p>
+                    </div>
+                </div>                
+                <li><strong><span style="font-size: 18px;">Alinhamento:</span></strong> Evitar texto justificado que cria espaços irregulares</li>
+                <div class="alignment-examples" aria-label="Exemplos de alinhamento de texto">
+                    <div class="alignment-example justified">
+                        <h4>Texto justificado</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod, nisl sit amet ultricies laoreet, nulla lectus consequat erat, vitae scelerisque nibh urna nec mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam lacinia diam eu pretium interdum.</p>
+                    </div>
+                    <div class="alignment-example left">
+                        <h4>Texto alinhado à esquerda</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod, nisl sit amet ultricies laoreet, nulla lectus consequat erat, vitae scelerisque nibh urna nec mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam lacinia diam eu pretium interdum.</p>
+                    </div>
+                </div>
+                <li><strong><span style="font-size: 18px;">Entrelinha:</span></strong> Usar espaçamento de 1.5 ou 2.0 para facilitar a leitura</li>
+                <div class="line-height-examples" aria-label="Exemplos de espaçamento de linha">
+                    <div class="line-height-example small-spacing">
+                        <h4>Espaçamento 1,0</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+                    </div>
+                    <div class="line-height-example large-spacing">
+                        <h4>Espaçamento 1,5</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+                    </div>
+                </div>
+            </ul>
+
+            <h3>Organização Visual e Espaçamento</h3>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>📏 Espaçamento Adequado</h4>
+                    <p>Use margens e entrelinhas generosas para evitar sobrecarga visual e melhorar a legibilidade do conteúdo.</p>
+                </div>
+            </div>
+            <div class="margin-spacing-examples" aria-label="Exemplos de margens e entrelinha corretas e incorretas">
+                <div class="example good-practice">
+                    <h4>Boas práticas</h4>
+                    <p style="margin:1.5rem 0; line-height:2;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Espaços adequados entre parágrafos e entrelinhas promovem leitura confortável, reduzindo a sobrecarga visual e aumentando a compreensão.</p>
+                </div>
+                <div class="example bad-practice">
+                    <h4>Má prática</h4>
+                    <p style="margin:0.2rem 0; line-height:1;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Texto com margens e entrelinhas insuficientes fica comprimido, visualmente sobrecarregado e difícil de ler.</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🗂️ Agrupamento Visual</h4>
+                    <p>Agrupe informações relacionadas visualmente para facilitar a compreensão e navegação do usuário.</p>
+                </div>
+                <div class="card">
+                    <h4>📋 Listas Organizadas</h4>
+                    <p>Utilize listas ordenadas e não ordenadas com ícones para organizar informações e facilitar a varredura visual.</p>
+                </div>
+            </div>
+
+            <div class="list-organization-examples" aria-label="Exemplos de listas organizadas e desorganizadas">
+                <div class="list-example good-list-practice">
+                    <h4>Com organização visual</h4>
+                    <p>As informações abaixo usam listas com ícones para facilitar a leitura rápida:</p>
+                    <ul class="icon-list">
+                        <li>✅ Contraste adequado entre texto e fundo</li>
+                        <li>✅ Hierarquia clara de títulos e subtítulos</li>
+                        <li>✅ Espaçamento consistente entre blocos</li>
+                    </ul>
+                    <ol class="icon-list ordered-list">
+                        <li>1️⃣ Defina a prioridade da informação</li>
+                        <li>2️⃣ Agrupe tópicos relacionados</li>
+                        <li>3️⃣ Revise para leitura por varredura visual</li>
+                    </ol>
+                </div>
+                <div class="list-example bad-list-practice">
+                    <h4>Sem organização visual</h4>
+                    <p>Contraste adequado entre texto e fundo hierarquia clara de títulos e subtítulos espaçamento consistente entre blocos definir a prioridade da informação agrupar tópicos relacionados revisar para leitura por varredura visual tudo apresentado em um único bloco contínuo dificulta encontrar pontos-chave e prejudica a legibilidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: CONTEÚDO TEXTUAL -->
+        <section id="conteudo-textual" class="fade-in">
+            <h2>Conteúdo Textual e Linguagem</h2>
+            
+            <p>A clareza, concisão e a estrutura semântica do texto são essenciais para a compreensão e a acessibilidade por tecnologias assistivas. A forma como o conteúdo textual é apresentado pode impactar significativamente a experiência de aprendizagem de todos os alunos.</p>
+
+            <h3>Diretrizes para Linguagem Clara</h3>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Princípio</th>
+                            <th>Recomendação</th>
+                            <th>Exemplo Inadequado</th>
+                            <th>Exemplo Adequado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Simplicidade</td>
+                            <td>Use vocabulário acessível</td>
+                            <td>"Implementação de <i>frameworks</i> pedagógicos"</td>
+                            <td>"Uso de métodos de ensino"</td>
+                        </tr>
+                        <tr>
+                            <td>Concisão</td>
+                            <td>Frases curtas e diretas</td>
+                            <td>Períodos longos com múltiplas subordinadas</td>
+                            <td>Uma ideia por frase</td>
+                        </tr>
+                        <tr>
+                            <td>Clareza</td>
+                            <td>Explique jargões técnicos</td>
+                            <td>Usar termos sem contexto</td>
+                            <td>Definir termos quando necessário</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Estrutura Semântica de Cabeçalhos</h3>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>h1 - Título Principal</h4>
+                    <p>Usado para o título principal do curso ou módulo. Deve haver apenas um h1 por página.</p>
+                </div>
+                <div class="card">
+                    <h4>h2 - Tópicos Principais</h4>
+                    <p>Para as seções principais de cada módulo ou unidade de aprendizagem.</p>
+                </div>
+                <div class="card">
+                    <h4>h3 - Subtópicos</h4>
+                    <p>Para subdivisões dentro dos tópicos principais, mantendo a hierarquia lógica.</p>
+                </div>
+            </div>
+
+            <div class="highlight-section">
+                <h3>Importância da Estrutura Semântica</h3>
+                <p>Leitores de tela utilizam a estrutura de cabeçalhos para navegação, permitindo que usuários "pulem" entre seções de forma eficiente. Nunca use apenas negrito ou tamanho de fonte para criar títulos.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: MULTIMÍDIA -->
+        <section id="multimidia" class="fade-in">
+            <h2>Multimídia (Vídeos, Áudios e Animações)</h2>
+            
+            <p>Conteúdos multimídia são ricos e engajadores, mas devem ser acessíveis em múltiplos formatos para garantir a inclusão de todos os alunos. A atenção a esses detalhes é importante para que a informação seja percebida por diferentes sentidos e tecnologias assistivas.</p>
+
+            <h3>Recursos de Acessibilidade para Vídeos</h3>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Recurso</th>
+                            <th>Beneficiários</th>
+                            <th>Formato Recomendado</th>
+                            <th>Exemplo de Implementação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Legendas Sincronizadas</td>
+                            <td>Pessoas com deficiência auditiva</td>
+                            <td>.srt, .vtt</td>
+                            <td><i>Closed captions</i> que podem ser ligadas/desligadas</td>
+                        </tr>
+                        <tr>
+                            <td>Transcrições</td>
+                            <td>Usuários que preferem texto</td>
+                            <td>PDF, HTML</td>
+                            <td><i>Script</i> completo em área de materiais complementares</td>
+                        </tr>
+                        <tr>
+                            <td>Audiodescrição</td>
+                            <td>Pessoas cegas ou com baixa visão</td>
+                            <td>Faixa de áudio adicional</td>
+                            <td>Narração de elementos visuais importantes</td>
+                        </tr>
+                        <tr>
+                            <td>Controles Acessíveis</td>
+                            <td>Usuários de teclado e leitores de tela</td>
+                            <td>Players compatíveis</td>
+                            <td>YouTube, Vimeo com recursos nativos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h4>⚠️ Prevenção de Conteúdo Epiléptico</h4>
+                <p>Evite flashes ou animações piscantes com frequência superior a 3 vezes por segundo. Se essencial, forneça aviso e alternativa estática.</p>
+            </div>
+
+            <h3>Exemplo de Audiodescrição</h3>
+            <div class="highlight-section">
+                <p><em>"O cientista adiciona 5ml de reagente azul ao frasco, a solução muda de azul para vermelho e começa a efervescer, formando pequenas bolhas que sobem à superfície."</em></p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: INTERAÇÃO -->
+        <section id="interacao" class="fade-in">
+            <h2>Interação, Navegação e Usabilidade</h2>
+
+            <p>A forma como o aluno interage com o ambiente virtual deve ser intuitiva, flexível e consistente, promovendo autonomia e facilitando o acesso à informação.</p>
+
+            <h3>Princípios de Navegação Acessível</h3>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>⌨️ Navegação por Teclado</h4>
+                    <p>Todas as funcionalidades devem ser acessíveis usando apenas Tab, Shift+Tab, Enter e setas direcionais.</p>
+                </div>
+                <div class="card">
+                    <h4>👁️ Foco Visível</h4>
+                    <p>Indicador visual claro do elemento em foco, seguindo ordem lógica de leitura.</p>
+                </div>
+                <div class="card">
+                    <h4>🔄 Consistência</h4>
+                    <p>Layout, navegação e linguagem padronizados em todo o curso.</p>
+                </div>
+                <div class="card">
+                    <h4>⏱️ Tempo Adequado</h4>
+                    <p>Tempo suficiente para leitura e interação, com opções de extensão quando necessário.</p>
+                </div>
+            </div>
+
+            <h3>Mensagens de Erro Acessíveis</h3>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Erro</th>
+                            <th>Mensagem Inadequada</th>
+                            <th>Mensagem Acessível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>E-mail inválido</td>
+                            <td>"Erro"</td>
+                            <td>"E-mail inválido. Por favor, insira um e-mail no formato 'usuario@dominio.com'"</td>
+                        </tr>
+                        <tr>
+                            <td>Campo obrigatório</td>
+                            <td>"Campo vazio"</td>
+                            <td>"Nome é obrigatório. Por favor, preencha este campo."</td>
+                        </tr>
+                        <tr>
+                            <td>Senha fraca</td>
+                            <td>"Senha inválida"</td>
+                            <td>"Senha deve ter pelo menos 8 caracteres, incluindo letras e números."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: ATIVIDADES -->
+        <section id="atividades" class="fade-in">
+            <h2>Atividades e Avaliações Inclusivas</h2>
+            
+            <p>As estratégias de ensino-aprendizagem e avaliação devem ser pensadas para a diversidade, permitindo múltiplas formas de participação e demonstração de conhecimento.</p>
+
+            <h3>Flexibilidade nas Atividades</h3>
+            
+            <div class="highlight-section">
+                <h3>Princípio de Múltiplos Meios de Ação e Expressão (DUA)</h3>
+                <p>Ofereça alternativas para a forma como os alunos interagem com o conteúdo e expressam seu conhecimento, respeitando diferentes habilidades e preferências de aprendizagem.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>📝 Texto Escrito</h4>
+                    <p>Relatórios, ensaios, resumos e análises textuais tradicionais.</p>
+                </div>
+                <div class="card">
+                    <h4>🎥 Vídeo Explicativo</h4>
+                    <p>Apresentações gravadas, demonstrações práticas ou tutoriais.</p>
+                </div>
+                <div class="card">
+                    <h4>🎙️ Áudio/Podcast</h4>
+                    <p>Gravações de áudio, entrevistas ou discussões narradas.</p>
+                </div>
+                <div class="card">
+                    <h4>📊 Infográfico</h4>
+                    <p>Representações visuais de dados e informações.</p>
+                </div>
+                <div class="card">
+                    <h4>📋 Apresentação</h4>
+                    <p>Slides interativos ou apresentações estruturadas.</p>
+                </div>
+                <div class="card">
+                    <h4>🛠️ Projeto Prático</h4>
+                    <p>Aplicações práticas, protótipos ou demonstrações.</p>
+                </div>
+            </div>
+
+            <h3>Avaliações Acessíveis</h3>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Avaliação</th>
+                            <th>Considerações de Acessibilidade</th>
+                            <th>Alternativas Inclusivas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Múltipla Escolha</td>
+                            <td>Compatibilidade com leitores de tela</td>
+                            <td>Questões claras, opções bem estruturadas</td>
+                        </tr>
+                        <tr>
+                            <td>Dissertativa</td>
+                            <td>Suporte a softwares de ditado</td>
+                            <td>Campos de texto acessíveis por teclado</td>
+                        </tr>
+                        <tr>
+                            <td>Arrastar e Soltar</td>
+                            <td>Alternativa para navegação por teclado</td>
+                            <td>Opções de seleção por lista ou botões</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: FERRAMENTAS -->
+        <section id="ferramentas" class="fade-in">
+            <h2>Ferramentas e Plataformas (AVA)</h2>
+            
+            <p>A escolha, configuração e o uso adequado do Ambiente Virtual de Aprendizagem (AVA) e outras ferramentas digitais são essenciais para a acessibilidade.</p>
+
+            <h3>Critérios para Escolha de AVA Acessível</h3>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>📋 VPAT Disponível</h4>
+                    <p><i>Voluntary Product Accessibility Template</i> documentando conformidade com WCAG</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 WCAG 2.1 AA</h4>
+                    <p>Conformidade comprovada com diretrizes de acessibilidade nível AA</p>
+                </div>
+                <div class="card">
+                    <h4>🔧 Recursos Nativos</h4>
+                    <p>Ferramentas de acessibilidade integradas na plataforma</p>
+                </div>
+                <div class="card">
+                    <h4>🤝 Suporte Técnico</h4>
+                    <p>Equipe especializada em questões de acessibilidade</p>
+                </div>
+            </div>
+
+            <h3>Configurações de Acessibilidade Recomendadas</h3>
+            
+            <ul class="styled-list">
+                <li><strong><span style="font-size: 18px;">Temas de Alto Contraste:</span></strong> Opções para usuários com baixa visão</li>
+                <li><strong><span style="font-size: 18px;">Ajuste de Fonte:</span></strong> Controles para tamanho e tipo de letra</li>
+                <li><strong><span style="font-size: 18px;">Leitores Integrados:</span></strong> Ferramentas de <i>text-to-speech</i> nativas</li>
+                <li><strong><span style="font-size: 18px;">Navegação Simplificada:</span></strong> Menus e estruturas otimizadas</li>
+                <li><strong><span style="font-size: 18px;">Compatibilidade:</span></strong> Suporte a tecnologias assistivas externas</li>
+            </ul>
+
+            <div class="highlight-section">
+                <h3>Capacitação Contínua</h3>
+                <p>Ofereça suporte técnico e pedagógico contínuo para que alunos e professores saibam como usar os recursos de acessibilidade da plataforma. Crie tutoriais em múltiplos formatos e mantenha canais de comunicação abertos para <i>feedback</i>.</p>
+            </div>
+
+            <div class="card">
+                <h4>📚 Recursos de Capacitação</h4>
+                <ul>
+                    <li> Tutoriais em vídeo com legendas e audiodescrição</li>
+                    <li> Guias textuais passo a passo</li>
+                    <li> Webinars de treinamento regulares</li>
+                    <li> Canal de suporte especializado</li>
+                    <li> Comunidade de práticas para troca de experiências</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: CONCLUSÃO -->
+        <section class="fade-in">
+            <h2>Conclusão</h2>
+            <p>A implementação dessas boas práticas em Design Instrucional Acessível na EaD representa um compromisso com a educação inclusiva e de qualidade. Cada elemento abordado neste guia contribui para criar ambientes de aprendizagem que atendam à diversidade de necessidades dos estudantes.</p>
+            
+            <div class="highlight-section">
+                <h3>Próximos Passos</h3>
+                <p>Comece implementando as práticas mais fundamentais, como contraste adequado e estrutura semântica, e gradualmente incorpore elementos mais avançados. Lembre-se: a acessibilidade é um processo contínuo de melhoria, não um destino final.</p>
+                <button class="btn" onclick="scrollToTop()">Voltar ao Topo</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================================================================
+         RODAPÉ
+         ================================================================ -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Guia de Boas Práticas em Design Instrucional Acessível na EaD</p>
+            <p>Versão 2026.1.0.001</p>
+            <div aria-label="Modo daltônico extra" role="group">
+                <img id="easteregg-trigger" src="images/easteregg.png" style="width:48px; height:48px; cursor:pointer; opacity:0.9;" alt="Easter Egg - Modos de Daltonismo">
+                <div class="easteregg-buttons">
+                    <button id="daltonism-protanopia" class="easteregg-btn" data-tooltip="Simulação de daltonismo protanopia (dificuldade com vermelho)" aria-label="Modo Protanopia">Protanopia</button>
+                    <button id="daltonism-deuteranopia" class="easteregg-btn" data-tooltip="Simulação de daltonismo deuteranopia (dificuldade com verde)" aria-label="Modo Deuteranopia">Deuteranopia</button>
+                    <button id="daltonism-tritanopia" class="easteregg-btn" data-tooltip="Simulação de daltonismo tritanopia (dificuldade com azul)" aria-label="Modo Tritanopia">Tritanopia</button>
+                    <button id="daltonism-achromatopsia" class="easteregg-btn" data-tooltip="Simulação de acromatopsia (visão em tons de cinza)" aria-label="Modo Acromatopsia">Acromatopsia</button>
+                    <button id="daltonism-reset" class="easteregg-btn" data-tooltip="Desativar modo daltônico experimental" aria-label="Limpar modo daltônico">Desativar</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
